@@ -14,7 +14,7 @@ const config = (env) => ({
 
   mode: env === 'develop' ? 'development' : 'production',
 
-  entry: ['./src/js/index.js', './src/styles/main.scss'],
+  entry: ['./src/main.js', './src/styles/main.scss'],
 
   devtool: 'inline-source-map',
 
@@ -26,7 +26,7 @@ const config = (env) => ({
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: '[name].bundle.js'
   },
 
   // performance: { hints: false }, //have to change for best performance to (max file - 250 kB)
@@ -49,9 +49,8 @@ const config = (env) => ({
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      hash: true,
       filename: 'index.html',
-      template: './src/index.html', //this option specifies which file to use as template for the index.html being created.
+      template: './src/template/index.pug'
     }),
     new webpack.LoaderOptionsPlugin({
       options: {
@@ -82,6 +81,10 @@ const config = (env) => ({
 
           }
         }
+      },
+      {
+        test: /\.pug$/,
+        use: ['html-loader?attrs=false', 'pug-html-loader']
       },
       {
         test: /\.(sass|scss)$/,
