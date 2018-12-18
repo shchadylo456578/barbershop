@@ -14,14 +14,15 @@ const config = (env) => ({
 
   mode: env === 'develop' ? 'development' : 'production',
 
-  entry: ['./src/main.js', './src/styles/main.scss'],
+  entry: ['./src/main.js', './src/styles/main.scss', './src/template/index.pug'],
 
   devtool: 'inline-source-map',
 
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 9000
+    port: 9000,
+    hot: true  //Hot Module Replacement
   },
 
   output: {
@@ -29,9 +30,9 @@ const config = (env) => ({
     filename: '[name].bundle.js'
   },
 
-  // performance: { hints: false }, //have to change for best performance to (max file - 250 kB)
+  performance: { hints: false }, //have to change for best performance to (max file - 250 kB)
 
-//OPTIMIZATIONS------------------------------
+//OPTIMIZATIONS------------------------------------------------------------------------------------------
   optimization: {
     usedExports: true,
     minimizer: [
@@ -45,13 +46,15 @@ const config = (env) => ({
     ]
   },
 
-//PLUGINS------------------------------
+//PLUGINS------------------------------------------------------------------------------------------
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './src/template/index.pug'
+      template: './src/template/index.pug',
+      inject: true
     }),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: [
@@ -67,7 +70,7 @@ const config = (env) => ({
     ]),
   ],
 
-//MODULES------------------------------
+//MODULES--------------------------------------------------------------------------------------
   module: {
     rules: [
       {
@@ -84,7 +87,7 @@ const config = (env) => ({
       },
       {
         test: /\.pug$/,
-        use: ['html-loader?attrs=false', 'pug-html-loader']
+        use: ['html-loader?attrs=false', 'pug-html-loader?pretty&exports=false']
       },
       {
         test: /\.(sass|scss)$/,
@@ -94,12 +97,7 @@ const config = (env) => ({
             loader: process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
           },
           {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 2,
-              sourceMap: true
-
-            }
+            loader: 'css-loader?url=false'
           },
           {
             loader: 'postcss-loader',

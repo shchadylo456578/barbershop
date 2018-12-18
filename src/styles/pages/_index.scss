@@ -1,9 +1,45 @@
 * {
   box-sizing: border-box;
 }
+a {
+  text-decoration: none;
+}
 
-header {
-  h1 {
-    color: red;
+body {
+  font-family: 'Montserrat', sans-serif;
+
+
+  @include reset();
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+
+.container {
+  @include wrapper();
+}
+
+.container-3-columns {
+  .row {
+    @include row-flex();
+    justify-content: space-between;
+    @include xs(justify-content, center);
+
+    .col {
+      @include col();
+      @include size(4);
+      @include size-xs(12);
+    }
   }
 }
+
+// .container-2-columns {
+//   .row {
+
+//   }
+// }
