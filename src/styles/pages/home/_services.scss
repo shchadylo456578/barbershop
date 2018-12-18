@@ -1,0 +1,23 @@
+.services {
+  .image-box {
+    position: relative;
+    
+    .title-photo {
+      position: absolute;
+      left: 0;
+      bottom: 3px;
+      width: 100%;
+      padding: 10px 15px;
+      background: rgba(82, 64, 34, 0.80);
+
+      p {
+        font-size: 21px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #fff;
+        text-align: center;
+      }
+    }
+  }
+}

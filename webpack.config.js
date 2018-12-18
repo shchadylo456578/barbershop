@@ -22,7 +22,7 @@ const config = (env) => ({
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000,
-    hot: true  //Hot Module Replacement
+    hot: false  //Hot Module Replacement
   },
 
   output: {
@@ -54,7 +54,6 @@ const config = (env) => ({
       template: './src/template/index.pug',
       inject: true
     }),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: [
