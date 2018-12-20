@@ -20,26 +20,3 @@ li {
   list-style: none;
 }
 
-.container {
-  @include wrapper();
-}
-
-.container-3-columns {
-  .row {
-    @include row-flex();
-    justify-content: space-between;
-    @include xs(justify-content, center);
-
-    .col {
-      @include col();
-      @include size(4);
-      @include size-xs(12);
-    }
-  }
-}
-
-// .container-2-columns {
-//   .row {
-
-//   }
-// }

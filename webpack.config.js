@@ -1,5 +1,4 @@
 const path = require('path');
-
 const webpack = require('webpack');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); //have to add in (module > rules > use - "MiniCssExtractPlugin.loader")if you want to minimize CSS
@@ -54,6 +53,7 @@ const config = (env) => ({
       template: './src/template/index.pug',
       inject: true
     }),
+    // new webpack.HotModuleReplacementPlugin(),
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: [
@@ -86,7 +86,7 @@ const config = (env) => ({
       },
       {
         test: /\.pug$/,
-        use: ['html-loader?attrs=false', 'pug-html-loader?pretty&exports=false']
+        use: ['html-loader?attrs=false', 'pug-html-loader']
       },
       {
         test: /\.(sass|scss)$/,

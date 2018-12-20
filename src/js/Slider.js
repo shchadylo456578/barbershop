@@ -1,4 +1,5 @@
 export default function Slider(obj) {
+  // console.log("hello from slider");
 
   this.images = document.querySelectorAll(obj.images);
   this.next = document.querySelector(obj.next);
@@ -15,14 +16,11 @@ export default function Slider(obj) {
   let i = 0;
   let j = 0;
 
-
-
   let eventsSlider = {
-
     clearTime: () => {
       clearInterval(timeout);
-      timeout = setTimeout(function () {
-        btnNextAuto()
+      timeout = setTimeout(function() {
+        btnNextAuto();
       }, slider.stopDurationTime);
     },
 
@@ -34,8 +32,6 @@ export default function Slider(obj) {
         i = 0;
       }
       slider.images[i].classList.add(slider.active);
-
-
     },
 
     imgEventPrev: () => {
@@ -58,7 +54,6 @@ export default function Slider(obj) {
     },
 
     dotsEventPrev: () => {
-
       slider.dots[j].classList.remove(slider.activeDot);
       j--;
       if (j < 0) {
@@ -66,20 +61,15 @@ export default function Slider(obj) {
       }
       slider.dots[j].classList.add(slider.activeDot);
     }
-
-
   };
-
 
   function btnNextAuto() {
     if (slider.auto === true) {
       timeout = setInterval(() => {
         eventsSlider.imgEventNext();
         eventsSlider.dotsEventNext();
-
       }, slider.rate);
     }
-
   }
 
   btnNextAuto();
@@ -89,8 +79,6 @@ export default function Slider(obj) {
       eventsSlider.imgEventNext();
       eventsSlider.dotsEventNext();
       eventsSlider.clearTime();
-
-
     });
   })();
 
@@ -99,8 +87,6 @@ export default function Slider(obj) {
       eventsSlider.imgEventPrev();
       eventsSlider.dotsEventPrev();
       // clearTime();
-
-
     });
   })();
   return this;
