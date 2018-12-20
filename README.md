@@ -1,8 +1,7 @@
 # barbershop
 
 ##Quick installation:
-
-Clone project from github
-Install dependencies "npm install"
-Run webpack default "npm start"
-Build for production "npm run build"
+1) Clone project from github
+2) Install dependencies "npm install"
+3) Run webpack default "npm start"
+4) Build for production "npm run build"
