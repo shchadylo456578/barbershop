@@ -89,23 +89,23 @@
     }
   }
 
-  &__button-from {
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    color: #fff;
-    text-transform: uppercase;
-    font-size: 11px;
-    letter-spacing: 1px;
-    background-color: #bea88b;
-    transition: 0.3s ease all;
-    cursor: pointer;
+  // &__button-from {
+  //   width: 100%;
+  //   padding: 20px;
+  //   text-align: center;
+  //   color: #fff;
+  //   text-transform: uppercase;
+  //   font-size: 11px;
+  //   letter-spacing: 1px;
+  //   background-color: #bea88b;
+  //   transition: 0.3s ease all;
+  //   cursor: pointer;
 
-    &:hover {
-      background-color: #fff;
-      color: #bea88b;
-      border: 1px solid #bea88b;
-    }
-  }
+  //   &:hover {
+  //     background-color: #fff;
+  //     color: #bea88b;
+  //     border: 1px solid #bea88b;
+  //   }
+  // }
 
 }

@@ -1,0 +1,18 @@
+.services-features {
+
+
+  &__text-col {
+    .icon-razor {
+      background-image: url("images/razor.svg");
+
+    }
+    .icon-scissor {
+      background-image: url("images/scissors.svg");
+
+    }
+    .icon-brush {
+      background-image: url("images/salon.svg");
+
+    }
+  }
+}
