@@ -1,15 +1,42 @@
 .services-features {
+  &__text-header {
+    text-align: center;
+    margin-bottom: 80px;
+
+    p {
+      color: #444;
+      font-size: 14px;
+    }
+  }
 
 
   &__text-col {
+    text-align: center;
+
+    h3 {
+      color: #252525;
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    p {
+       font-size: 14px;
+       color: #444;
+       line-height: 32px;
+    }
+
     .icon-razor {
       background-image: url("images/razor.svg");
 
     }
+
     .icon-scissor {
       background-image: url("images/scissors.svg");
 
     }
+
     .icon-brush {
       background-image: url("images/salon.svg");
 

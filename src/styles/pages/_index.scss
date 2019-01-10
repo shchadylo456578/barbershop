@@ -20,23 +20,3 @@ li {
   list-style: none;
 }
 
-.h2 {
-  position: relative;
-  font-size: 34px;
-  font-weight: 400;
-  margin-bottom: 40px;
-  text-transform: capitalize;
-  text-align: center;
-
-
-    &:before,
-    &:after {
-      content: '';
-      background-image: url('images/h2-square.svg');
-      // position: absolute;
-      width: 10px;
-      height: 10px;
-    }
-
-
-}

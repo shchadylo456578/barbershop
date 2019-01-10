@@ -1,0 +1,23 @@
+.h2-dots {
+  font-size: 34px;
+  font-weight: 400;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+
+  &:before,
+  &:after {
+    content: '';
+    background: url('images/h2-square.svg') center center no-repeat;
+    display: inline-block;
+    width: 10px;
+    height: 21px;
+  }
+
+  &:before {
+    margin-right: 10px;
+  }
+
+  &:after {
+    margin-left: 10px;
+  }
+}
