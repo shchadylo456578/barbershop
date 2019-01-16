@@ -3,6 +3,7 @@
 
   .slider {
     position: relative;
+    height: 100vh;
 
     @include to($max_width: 480px) {
       height: 80vh;
@@ -42,6 +43,10 @@
       #next,
       #prev {
         cursor: pointer;
+
+        &:hover .arrow-left, &:hover .arrow-right {
+          border-color: #000;
+        }
       }
 
       &__button-left,
@@ -49,15 +54,16 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        background: rgba(256, 256, 256, 0.5);
+        background: transparent;
         width: 50px;
-        border-radius: 50%;
+        border-radius: 5px;
+        border: 1px solid #bea88b;
         height: 50px;
         z-index: 5;
         transition: background 0.3s ease;
 
         &:hover {
-          background: rgba(256, 256, 256, 1);
+          background: #bea88b;
 
         }
 
@@ -65,8 +71,8 @@
         .arrow-left {
           position: absolute;
           top: 50%;
-          width: 44%;
-          height: 42%;
+          width: 27%;
+          height: 27%;
         }
       }
 
@@ -74,11 +80,11 @@
         right: 2%;
 
         .arrow-right {
-          right: 37%;
+          right: 40%;
           transform: translateY(-50%) rotate(45deg);
-          border-top: solid 3px;
-          border-right: solid 3px;
-          border-color:#000;
+          border-top: solid 2px;
+          border-right: solid 2px;
+          border-color: #fff;
         }
       }
 
@@ -86,12 +92,14 @@
         left: 2%;
 
         .arrow-left {
-          left: 37%;
+          left: 40%;
           transform: translateY(-50%) rotate(-45deg);
-          border-top: solid 3px;
-          border-left: solid 3px;
-          border-color: #000;
+          border-top: solid 2px;
+          border-left: solid 2px;
+          border-color: #fff;
+
         }
+        
       }
     }
 
@@ -113,7 +121,7 @@
       }
 
       .dot-active {
-        background-color:#000;
+        background-color: #000;
         opacity: 1;
         width: 10px;
         height: 10px;

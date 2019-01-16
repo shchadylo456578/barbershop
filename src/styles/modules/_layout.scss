@@ -1,14 +1,15 @@
 .container-fluid {
   @include wrapper-full();
+
   .row {
     @include row-flex();
     justify-content: space-between;
     @include xs(justify-content, center);
 
     .col {
-       @include col();
-       @include size(6);
-       @include size-xs(12);
+      @include col();
+      @include size(6);
+      @include size-xs(12);
     }
   }
 }
@@ -60,3 +61,30 @@
     }
   }
 }
+
+.container-4-columns {
+  .row {
+    @include row-flex();
+
+    .col {
+      @include col();
+      @include size(3);
+      @include size-lg(6);
+      @include size-xs(12);
+
+      @include to($max-width: 425px) {
+        margin-bottom: 30px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.container-4-col-specific {
+  
+}
+
+

@@ -1,7 +1,9 @@
 import './styles/main.scss';
 import openAndClosePopupSearch from './js/Popup-search.js';
 import Slider from './js/Slider';
+import navAnimation from './js/Nav-animation';
 
+navAnimation();
 openAndClosePopupSearch();
 
 let slider = new Slider({
