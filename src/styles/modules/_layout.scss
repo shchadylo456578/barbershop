@@ -9,6 +9,7 @@
     .col {
       @include col();
       @include size(6);
+      @include size-sm(12);
       @include size-xs(12);
     }
   }
@@ -40,6 +41,7 @@
     .col-8 {
       @include col();
       @include size(8);
+      @include size-sm(12);
       @include size-xs(12);
 
       .row {
@@ -57,6 +59,7 @@
     .col-4 {
       @include col();
       @include size(4);
+      @include size-sm(12);
       @include size-xs(12);
     }
   }
@@ -83,8 +86,15 @@
   }
 }
 
-.container-4-col-specific {
-  
-}
-
-
+// .container-4-spec {
+//   .row{ 
+//     @include row-flex;
+//     .col {
+//       @include col();
+//       @include size(3);
+//       @include size-lg(4);
+//       @include size-xs(12);
+//     }
+//     .col-spec 
+//   }
+// }

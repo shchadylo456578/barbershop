@@ -1,9 +1,22 @@
 .products {
+  .header-text {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
   figure {
     position: relative;
     overflow: hidden;
     margin: 0;
-    
+
+    .img-product {
+      background-size: 100%;
+      display: block;
+      height: 0;
+      padding-bottom: 100%;
+
+    }
+
     button {
       position: absolute;
       bottom: -50px;
@@ -16,36 +29,15 @@
     }
   }
 
-  .our-products {
-    padding: 50px 40px;
-    border: 7px solid #e7d9c7;
-    text-align: center;
-    background-color: #f5f5f5;
-
-
-    h4 {
-      color: #715a33;
-      font-size: 14px;
-      text-transform: uppercase;
-      margin-bottom: 35px;
-    }
-
-    p {
-      color: #313131;
-      font-size: 12px;
-      margin-bottom: 40px;
-      line-height: 32px;
-    }
-  }
-
   .low-content {
     padding: 15px;
 
-     h4 {
-       text-transform: uppercase;
-       font-size: 14px;
-       margin-bottom: 30px;
-     }
+    h4 {
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
     .prise {
       span {
         font-size: 11px;

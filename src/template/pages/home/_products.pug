@@ -1,15 +1,23 @@
 section.products
   .container.container-4-columns 
+    .header-text
+      h2.h2-dots our products
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit.
     .row
-      .col
-        .our-products
-          h4 our products
-          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur tenetur ab, adipisci nisi modi qui facere natus tempora perspiciatis.
-          button.btn-primary view all products
       .col
         figure
           a(href="#")
-            <img src="images/products/product-img-1.jpg" alt="The Pulpit Rock">
+            .img-product(style="background-image: url('images/products/product-img-4.jpg')")
+          button.btn-primary(type="submit") + add to cart 
+        .low-content
+          h4 men's scissors
+          .prise
+            span.actual $85.00
+            span.current $65.00
+      .col
+        figure
+          a(href="#")
+            .img-product(style="background-image: url('images/products/product-img-1.jpg')")
           button.btn-primary(type="submit") + add to cart 
         .low-content
           h4 men's shaving kit N°1
@@ -19,7 +27,7 @@ section.products
       .col
         figure
           a(href="#")
-            img(src="images/products/product-img-2.jpg" alt="The Pulpit Rock")
+            .img-product(style="background-image: url('images/products/product-img-2.jpg')")
           button.btn-primary(type="submit") + add to cart 
         .low-content
           h4 pure-shave balm
@@ -29,7 +37,7 @@ section.products
       .col
         figure
           a(href="")
-            img(src="images/products/product-img-3.jpg" alt="The Pulpit Rock")
+            .img-product(style="background-image: url('images/products/product-img-3.jpg')")
           button.btn-primary(type="submit") + add to cart  
         .low-content
           h4 gentleman shaver

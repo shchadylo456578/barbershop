@@ -2,7 +2,9 @@ import './styles/main.scss';
 import openAndClosePopupSearch from './js/Popup-search.js';
 import Slider from './js/Slider';
 import navAnimation from './js/Nav-animation';
+import navMobile from './js/Nav-mobile'
 
+navMobile();
 navAnimation();
 openAndClosePopupSearch();
 
@@ -17,18 +19,3 @@ let slider = new Slider({
   activeDot: 'dot-active',
   stopDurationTime: 5000
 });
-
-// if (module.hot) {
-//   module.hot.accept('./js/Popup-search.js', function () {
-//     console.log('Accepting the updated PopupSearch module!');
-//   });
-// }
-
-// if (module.hot) {
-//   module.hot.accept('./js/Slider.js', function () {
-//     console.log('Accepting the updated Slider module!');
-
-  
-
-//   });
-// }

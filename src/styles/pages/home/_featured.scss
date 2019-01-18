@@ -1,4 +1,10 @@
 .featured {
+
+  &__featured-photo {
+      @include to($max_width: 768px) {
+        margin-bottom: 50px;
+      }
+  }
   
   &__featured-text {
     text-align: center;
@@ -15,9 +21,6 @@
      }
 
      h2 {
-      color: #444;
-      font-size: 34px;
-      text-transform: capitalize;
       margin-bottom: 30px;
 
      }
@@ -31,11 +34,7 @@
      }
 
     p {
-      font-size: 14px;
-      color: #444;
       margin-bottom: 50px;
-      line-height: 32px;
-
     }
 
     .btn-width-featured {

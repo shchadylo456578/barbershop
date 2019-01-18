@@ -5,15 +5,6 @@
     position: relative;
     height: 100vh;
 
-    @include to($max_width: 480px) {
-      height: 80vh;
-    }
-
-    &__relative {
-      padding-top: 50%;
-      height: 0;
-    }
-
     &__images {
       .slide {
         position: absolute;
@@ -44,7 +35,8 @@
       #prev {
         cursor: pointer;
 
-        &:hover .arrow-left, &:hover .arrow-right {
+        &:hover .arrow-left,
+        &:hover .arrow-right {
           border-color: #000;
         }
       }
@@ -99,7 +91,7 @@
           border-color: #fff;
 
         }
-        
+
       }
     }
 
