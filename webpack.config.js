@@ -45,12 +45,35 @@ const config = (env) => ({
     ]
   },
 
+  resolve: {
+    modules: ['node_modules'],
+    alias: {
+      'TweenLite': 'gsap/src/minified/TweenLite.min.js',
+      'TweenMax': 'gsap/src/minified/TweenMax.min.js',
+      'TimelineLite': 'gsap/src/minified/TimelineLite.min.js',
+      'TimelineMax': 'gsap/src/minified/TimelineMax.min.js',
+      'ScrollMagic': 'scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
+      'animation.gsap': 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js',
+      'debug.addIndicators': 'scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js'
+    }
+  },
+
 //PLUGINS------------------------------------------------------------------------------------------
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/template/index.pug',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'about.html',
+      template: './src/template/about.pug',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'services.html',
+      template: './src/template/services.pug',
       inject: true
     }),
     // new webpack.HotModuleReplacementPlugin(),

@@ -5,12 +5,14 @@
 body {
   font-family: 'Montserrat', sans-serif;
   @include reset();
+  font-size: 11px;
 }
 
 ul {
   margin: 0;
   padding: 0;
 }
+
 li {
   list-style: none;
 }
@@ -22,3 +24,8 @@ a {
 section {
   margin-bottom: 100px;
 }
+
+figure {
+  margin: 0;
+}
+

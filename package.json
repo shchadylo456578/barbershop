@@ -47,8 +47,11 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.1.5",
+    "@glidejs/glide": "^3.2.4",
     "autoprefixer": "^9.3.1",
+    "gsap": "^2.0.2",
     "lodash": "^4.17.11",
-    "postcss-loader": "^3.0.0"
+    "postcss-loader": "^3.0.0",
+    "scrollmagic": "^2.0.6"
   }
 }

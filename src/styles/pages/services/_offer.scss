@@ -1,0 +1,23 @@
+.offer {
+  &__content {
+    .p--margin-bottom {
+      margin-bottom: 50px;
+    }
+
+    @include to($max_width: 480px) {
+      margin-bottom: 70px;
+
+    }
+
+    button {
+      width: 195px;
+    }
+  }
+
+  &__cards {
+    .p--margin-bottom {
+      margin-bottom: 50px;
+    }
+
+  }
+}

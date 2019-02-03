@@ -1,0 +1,36 @@
+.pricings {
+  padding: 80px 0;
+  background-color: #bea88b;
+  margin-bottom: 0;
+
+
+  .header-text {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 70px;
+
+  }
+
+  &__price-list {
+
+    @include to($max_width: 768px) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__price {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 30px;
+    padding: 10px 0;
+    border-bottom: 1px dotted #202020;
+
+    span {
+      color: #202020;
+      font-size: 14px;
+      font-style: italic;
+      line-height: 32px;
+
+    }
+  }
+}

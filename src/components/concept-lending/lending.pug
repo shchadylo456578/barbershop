@@ -1,0 +1,233 @@
+<!--
+
+// ScrollMagic library
+import TweenMax from 'TweenMax';
+import ScrollMagic from 'ScrollMagic';
+import 'animation.gsap';
+import 'debug.addIndicators';
+// ScrollMagic library
+
+let animationLogo = document.querySelector('.logo-animate');
+
+let heightContentHeader = document.querySelector('#js-content-height')
+
+
+// BEGIN Animation Tween
+let animLogoTween = new TweenMax.fromTo(animationLogo, 2, {
+    height: heightContentHeader.offsetHeight,
+    ease: Linear.easeNone
+  },
+  {
+    height:'120vh',
+    ease: Linear.easeNone
+  }
+)
+// END Animation Tween
+
+
+// BEGIN Scroll Magic Scene
+let controller = new ScrollMagic.Controller();
+new ScrollMagic.Scene({
+    tweenChanges: true,
+    triggerHook: 0,
+    offset: '20vh' // start this scene after scrolling for 50px
+  })
+  .setPin(animationLogo) // pins the element for the the scene's duration
+  .addIndicators()
+  .setTween(animLogoTween)
+  .addTo(controller); // assign the scene to the controller
+END Scroll Magic Scene 
+
+
+
+// CSS
+
+.container - fix - size {
+    max - width: 1920 px;
+    margin: 0 auto;
+
+
+
+    .container - fix - right {
+        margin: 0 0 0 auto;
+        width: calc(100 % -18 % );
+        padding: 0 15 px;
+        background: gray;
+
+
+        .row {
+          @include row - flex();
+
+          .col - 1 {
+              @include col();
+              @include size(1);
+              background: greenyellow;
+            }
+
+            .col - 11 {
+              @include col();
+              @include size(11);
+            }
+        }
+
+
+        @include to($max_width: 1280 px) {
+          width: calc(100 % -125 px);
+
+        }
+
+        @include to($max_width: 768 px) {
+          width: calc(100 % -35 px);
+
+        }
+
+        @include to($max_width: 425 px) {
+          width: 100 % ;
+        }
+      }
+
+
+      .container - fix - right {
+
+        .content {
+
+          h1 {
+            font - size: 50 px;
+            color: #fff;
+          }
+
+          p {
+            font - size: 16 px;
+            color: #fff;
+            line - height: 2;
+          }
+        }
+
+        .content - 2 {
+
+          h1 {
+            font - size: 50 px;
+            color: #fff;
+          }
+
+          p {
+            font - size: 16 px;
+            color: #fff;
+            line - height: 2;
+          }
+        }
+      }
+  }
+
+
+
+  .logo - container {
+    // height: 150vh;
+
+    .logo - animate {
+
+      // position: relative;
+      // top: 2vh;
+      width: 22 px;
+      height: 300 px;
+      margin: 0 auto;
+      background: firebrick;
+
+
+      // &:after {
+      //   content: "";
+      //   width: 43px;
+      //   height: 43px;
+      //   position: absolute;
+      //   background: gold;
+      //   border-radius: 50%;
+      //   background: transparent;
+
+      // }
+
+      @include to($max_width: 768 px) {
+        width: 16 px;
+      }
+
+      @include to($max_width: 425 px) {
+        width: 9 px;
+      }
+    }
+  }
+
+  // HTML
+  .container - fix - size
+    .container - fix - right
+    .row
+    .col - 1
+    .logo - container
+    .logo - animate
+    .col - 11# js - content - height.content
+  h1 Title
+  p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    .content - 2
+  p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+    p Lorem ipsum dolor sit amet consectetur adipisicing elit.Eos dignissimos, exercitationem natus vel reiciendis, eligendi officiis vitae dolores eum ducimus nemo fugit soluta nam distinctio error cupiditate facere quia inventore ?
+
+-->

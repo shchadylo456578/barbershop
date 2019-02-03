@@ -1,0 +1,38 @@
+.latest-blogposts {
+
+  h2 {
+    text-align: center;
+  }
+
+  &__blogposts-content {
+
+    @include to($max_width: 480px) {
+      margin-bottom: 50px;
+    }
+
+    .photo-bg {
+      background-size: cover;
+      display: block;
+      height: 0;
+      padding-bottom: 72%;
+      background-repeat: no-repeat;
+      margin-bottom: 30px;
+    }
+
+    .content {
+      h5 {
+        margin-bottom: 22px;
+      }
+
+      .p-name-colored {
+        font-size: 12px;
+        color: #715a33;
+        margin-bottom: 26px;
+      }
+
+      .p {
+        margin-bottom: 32px;
+      }
+    }
+  }
+}

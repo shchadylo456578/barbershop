@@ -1,0 +1,15 @@
+.btn-read-more {
+  color: #715a33;
+  font-family: "Raleway - Semi Bold";
+  font-size: 12px;
+  text-transform: uppercase;
+
+  &:before {
+    content: "";
+    background: url("images/svg/arrow.svg") center center no-repeat;
+    width: 22px;
+    height: 8px;
+    display: inline-block;
+    margin-right: 20px;
+  }
+}

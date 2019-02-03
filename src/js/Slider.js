@@ -1,6 +1,4 @@
-export default function Slider(obj) {
-  // console.log("hello from slider");
-
+function Slider(obj) {
   this.images = document.querySelectorAll(obj.images);
   this.next = document.querySelector(obj.next);
   this.prev = document.querySelector(obj.prev);
@@ -74,20 +72,43 @@ export default function Slider(obj) {
 
   btnNextAuto();
 
-  (function btnNext() {
-    slider.next.addEventListener('click', () => {
-      eventsSlider.imgEventNext();
-      eventsSlider.dotsEventNext();
-      eventsSlider.clearTime();
-    });
-  })();
+  function btnNext() {
+    if (slider.next) {
+      slider.next.addEventListener('click', () => {
+        eventsSlider.imgEventNext();
+        eventsSlider.dotsEventNext();
+        eventsSlider.clearTime();
+      });
+    }
+  }
 
-  (function btnPrev() {
-    slider.prev.addEventListener('click', () => {
-      eventsSlider.imgEventPrev();
-      eventsSlider.dotsEventPrev();
-      // clearTime();
-    });
-  })();
+  btnNext();
+
+  function btnPrev() {
+    if (slider.prev) {
+        slider.prev.addEventListener('click', () => {
+        eventsSlider.imgEventPrev();
+        eventsSlider.dotsEventPrev();
+        // clearTime();
+      });
+    }
+  }
+  btnPrev();
+
   return this;
+}
+
+
+export default function () {
+    let slider1 = new Slider({
+    images: '.slide',
+    prev: '.prev',
+    next: '.next',
+    active: 'active',
+    auto: false,
+    rate: 5000,
+    dots: '.dot',
+    activeDot: 'dot-active',
+    stopDurationTime: 5000
+  });
 }

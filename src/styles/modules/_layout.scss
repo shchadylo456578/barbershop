@@ -1,100 +1,84 @@
 .container-fluid {
-  @include wrapper-full();
+   max-width: 2560px;
+   margin: 0 auto;
 
-  .row {
-    @include row-flex();
-    justify-content: space-between;
-    @include xs(justify-content, center);
 
-    .col {
-      @include col();
-      @include size(6);
-      @include size-sm(12);
-      @include size-xs(12);
-    }
+   .row {
+     display: flex;
+     flex-wrap: wrap;
+
+
+
+     @include to($max_width: 1024px) {
+       justify-content: center;
+     }
+
+     .col {
+       width: 50%;
+
+       @include to($max_width: 1024px) {
+         width: 75%;
+       }
+
+       @include to($max_width: 480px) {
+         width: 100%;
+       }
+     }
   }
 }
 
 .container {
   @include wrapper();
-}
 
-.container-3-columns {
   .row {
     @include row-flex();
-    justify-content: space-between;
-    @include xs(justify-content, center);
+    // justify-content: space-between;
 
-    .col {
+    .col-3 {
       @include col();
-      @include size(4);
-      @include size-xs(12);
-    }
-  }
-}
-
-.container-2-columns {
-  .row {
-    @include row-flex();
-    justify-content: space-between;
-
-    .col-8 {
-      @include col();
-      @include size(8);
-      @include size-sm(12);
-      @include size-xs(12);
-
-      .row {
-        @include row-flex();
-        justify-content: space-between;
-
-        .col {
-          @include col();
-          @include size(6);
-          @include size-xs(12);
-        }
-      }
+      @include size(3);
     }
 
     .col-4 {
       @include col();
       @include size(4);
-      @include size-sm(12);
-      @include size-xs(12);
     }
-  }
-}
 
-.container-4-columns {
-  .row {
-    @include row-flex();
-
-    .col {
+    .col-6 {
       @include col();
-      @include size(3);
-      @include size-lg(6);
-      @include size-xs(12);
-
-      @include to($max-width: 425px) {
-        margin-bottom: 30px;
-
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
+      @include size(6);
     }
+
+    .col-8 {
+      @include col();
+      @include size(8);
+    }
+
+    .col-lg-6 {
+      @include col();
+      @include size-lg(6);
+    }
+
+    .col-md-12 {
+      @include col();
+      @include size-md(12);
+    }
+
+    .col-sm-7 {
+      @include col();
+      @include size-sm(7);
+    }
+
+    .col-sm-12 {
+      @include col();
+      @include size-sm(12);
+    }
+
+    .col-xs-12 {
+      @include col();
+      @include size-xs(12);
+    }
+
+
   }
 }
-
-// .container-4-spec {
-//   .row{ 
-//     @include row-flex;
-//     .col {
-//       @include col();
-//       @include size(3);
-//       @include size-lg(4);
-//       @include size-xs(12);
-//     }
-//     .col-spec 
-//   }
-// }

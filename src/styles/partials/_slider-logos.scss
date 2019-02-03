@@ -1,0 +1,19 @@
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
+.slider-logos {
+  .glide {
+    &__slide-item {
+      background-repeat: no-repeat;
+      background-position: center center;
+      height: 0;
+      background-size: contain;
+      padding-top: 35%;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

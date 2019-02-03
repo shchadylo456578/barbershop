@@ -1,0 +1,48 @@
+.h2-dots {
+
+  &:before,
+  &:after {
+    content: '';
+    background: url('images/svg/dot-square.svg') center center no-repeat;
+    display: inline-block;
+    width: 10px;
+    height: 15px;
+
+    @include to($max_width: 480px) {
+      height: 14px;
+    }
+  }
+
+  &:before {
+    margin-right: 10px;
+  }
+
+  &:after {
+    margin-left: 10px;
+  }
+
+  &--dots-white {
+
+    &:before,
+    &:after {
+      content: '';
+      background: url('images/svg/dot-square-white.svg') center center no-repeat;
+      display: inline-block;
+      width: 10px;
+      height: 15px;
+
+      @include to($max_width: 480px) {
+        height: 14px;
+      }
+    }
+
+    &:before {
+      margin-right: 10px;
+    }
+
+    &:after {
+      margin-left: 10px;
+    }
+
+  }
+}

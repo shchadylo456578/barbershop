@@ -1,7 +1,5 @@
 export default function openAndClosePopupSearch() {
 
-  console.log("hello from popup");
-
   let popupSearch = document.querySelector('.search-popup');
 
   let btnShow = document.querySelector('.btn-search');
