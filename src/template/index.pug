@@ -6,6 +6,14 @@ html(lang='en')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
     title Barbershop
     link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700,900', rel='stylesheet')
+    link(rel='apple-touch-icon', sizes='180x180', href='../favicon/apple-touch-icon.png')
+    link(rel='icon', type='image/png', sizes='32x32', href='../favicon/favicon-32x32.png')
+    link(rel='icon', type='image/png', sizes='16x16', href='../favicon/favicon-16x16.png')
+    link(rel='manifest', href='../favicon/site.webmanifest')
+    link(rel='mask-icon', href='../favicon/safari-pinned-tab.svg', color='#5bbad5')
+    meta(name='msapplication-TileColor', content='#da532c')
+    meta(name='theme-color', content='#ffffff')
+
 
   body
     include partials/_nav
@@ -15,8 +23,9 @@ html(lang='en')
     include pages/home/_featured
     include pages/home/_services-features
     include pages/home/_team
-    include pages/home/_products
+    include partials/_products
     include partials/_footer
+
 
 
 

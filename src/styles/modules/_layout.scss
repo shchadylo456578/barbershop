@@ -1,29 +1,30 @@
 .container-fluid {
-   max-width: 2560px;
-   margin: 0 auto;
+  max-width: 2560px;
+  margin: 0 auto;
+  padding: 0 15px;
 
 
-   .row {
-     display: flex;
-     flex-wrap: wrap;
+  .row {
+    display: flex;
+    flex-wrap: wrap;
 
 
 
-     @include to($max_width: 1024px) {
-       justify-content: center;
-     }
+    @include to($max_width: 1024px) {
+      justify-content: center;
+    }
 
-     .col {
-       width: 50%;
+    .col {
+      width: 50%;
 
-       @include to($max_width: 1024px) {
-         width: 75%;
-       }
+      @include to($max_width: 1024px) {
+        width: 75%;
+      }
 
-       @include to($max_width: 480px) {
-         width: 100%;
-       }
-     }
+      @include to($max_width: 480px) {
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -52,6 +53,16 @@
     .col-8 {
       @include col();
       @include size(8);
+    }
+
+    .col-9 {
+      @include col();
+      @include size(9);
+    }
+
+    .col-12 {
+      @include col();
+      @include size(12);
     }
 
     .col-lg-6 {

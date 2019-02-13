@@ -1,16 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin"); //have to add in (module > rules > use - "MiniCssExtractPlugin.loader")if you want to minimize CSS
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin'); //have to add in (module > rules > use - "MiniCssExtractPlugin.loader")if you want to minimize CSS
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-
-const config = (env) => ({
-
+const config = env => ({
   mode: env === 'develop' ? 'development' : 'production',
 
   entry: ['./src/main.js', './src/styles/main.scss', './src/template/index.pug'],
@@ -20,18 +18,17 @@ const config = (env) => ({
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 9000,
-    hot: false  //Hot Module Replacement
+    port: 9000
   },
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js'
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist')
   },
 
   performance: { hints: false }, //have to change for best performance to (max file - 250 kB)
 
-//OPTIMIZATIONS------------------------------------------------------------------------------------------
+  //OPTIMIZATIONS------------------------------------------------------------------------------------------
   optimization: {
     usedExports: true,
     minimizer: [
@@ -40,30 +37,32 @@ const config = (env) => ({
         parallel: true,
         sourceMap: true // set to true if you want JS source maps
       }),
-      new OptimizeCSSAssetsPlugin({}),
-
+      new OptimizeCSSAssetsPlugin({})
     ]
   },
 
   resolve: {
     modules: ['node_modules'],
     alias: {
-      'TweenLite': 'gsap/src/minified/TweenLite.min.js',
-      'TweenMax': 'gsap/src/minified/TweenMax.min.js',
-      'TimelineLite': 'gsap/src/minified/TimelineLite.min.js',
-      'TimelineMax': 'gsap/src/minified/TimelineMax.min.js',
-      'ScrollMagic': 'scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
-      'animation.gsap': 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js',
-      'debug.addIndicators': 'scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js'
+      TweenLite: 'gsap/src/minified/TweenLite.min.js',
+      TweenMax: 'gsap/src/minified/TweenMax.min.js',
+      TimelineLite: 'gsap/src/minified/TimelineLite.min.js',
+      TimelineMax: 'gsap/src/minified/TimelineMax.min.js',
+      ScrollMagic: 'scrollmagic/scrollmagic/minified/ScrollMagic.min.js',
+      'animation.gsap':
+        'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js',
+      'debug.addIndicators':
+        'scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js'
     }
   },
 
-//PLUGINS------------------------------------------------------------------------------------------
+  //PLUGINS------------------------------------------------------------------------------------------
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/template/index.pug',
+      favicon: './src/favicon/favicon-16x16.png',
       inject: true
     }),
     new HtmlWebpackPlugin({
@@ -76,23 +75,35 @@ const config = (env) => ({
       template: './src/template/services.pug',
       inject: true
     }),
-    // new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'shop.html',
+      template: './src/template/shop.pug',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'blog.html',
+      template: './src/template/blog.pug',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'contact-us.html',
+      template: './src/template/contact-us.pug',
+      inject: true
+    }),
     new webpack.LoaderOptionsPlugin({
       options: {
-        postcss: [
-          autoprefixer()
-        ]
+        postcss: [autoprefixer()]
       }
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: '[name].css'
     }),
     new CopyWebpackPlugin([
-      {from: './src/images/', to: 'images'} // change images to images
-    ]),
+      { from: './src/images/', to: 'images' } // change images to images
+    ])
   ],
 
-//MODULES--------------------------------------------------------------------------------------
+  //MODULES--------------------------------------------------------------------------------------
   module: {
     rules: [
       {
@@ -103,7 +114,6 @@ const config = (env) => ({
           options: {
             presets: ['@babel/preset-env'],
             plugins: ['@babel/plugin-transform-runtime']
-
           }
         }
       },
@@ -116,7 +126,10 @@ const config = (env) => ({
         exclude: /node_modules/,
         use: [
           {
-            loader: process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+            loader:
+              process.env.NODE_ENV !== 'production'
+                ? 'style-loader'
+                : MiniCssExtractPlugin.loader
           },
           {
             loader: 'css-loader?url=false'
@@ -124,9 +137,7 @@ const config = (env) => ({
           {
             loader: 'postcss-loader',
             options: {
-              plugins: () => [
-                require('autoprefixer')
-              ],
+              plugins: () => [require('autoprefixer')],
               sourceMap: true
             }
           },
@@ -144,30 +155,25 @@ const config = (env) => ({
 
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          'file-loader'
-        ]
+        use: ['file-loader']
       },
-
+      {
+        test: /favicon\.png$/,
+        use: 'file-loader?name=[name].[ext]'
+      },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          'file-loader'
-        ]
+        use: ['file-loader']
       },
 
       {
         test: /\.(csv|tsv)$/,
-        use: [
-          'csv-loader'
-        ]
+        use: ['csv-loader']
       },
 
       {
         test: /\.xml$/,
-        use: [
-          'xml-loader'
-        ]
+        use: ['xml-loader']
       }
     ]
   }

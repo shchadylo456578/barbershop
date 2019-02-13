@@ -3,7 +3,7 @@
   font-size: 26px;
   font-weight: 400;
   text-transform: capitalize;
-  
+
 
   @include to($max_width: 480px) {
     text-align: center;
@@ -17,15 +17,46 @@
   text-transform: uppercase;
   letter-spacing: 1.5px;
 
-    @include to($max_width: 480px) {
-      font-size: 14px;
+  @include to($max_width: 480px) {
+    font-size: 14px;
+  }
+
+  &--bordered-bottom {
+    &:before {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 2px;
+      top: 40px;
+      background-color: #bea88b;
     }
+  }
 }
 
-.p {
-  font-size: 14px;
-  line-height: 2.5;
+.h3--bordered-bottom {
+  color: #715a33;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+
+  @include to($max_width: 480px) {
+    font-size: 14px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    top: 25px;
+    background-color: #bea88b;
+  }
+
 }
+
+
+
 
 .h4 {
   position: relative;
@@ -54,4 +85,9 @@
 .h5 {
   font-size: 14px;
   text-transform: uppercase;
+}
+
+.p {
+  font-size: 14px;
+  line-height: 2.5;
 }

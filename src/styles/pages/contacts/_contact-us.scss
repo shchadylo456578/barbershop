@@ -1,0 +1,25 @@
+.contact-us {
+  margin-top: 12rem;
+
+  .wrapper-map {
+    position: relative;
+    margin-bottom: 80px;
+
+    .ratio {
+      padding-top: 50%;
+      height: 0;
+
+      @include to($max_width: 480px) {
+        padding-top: 133.33%;
+      }
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

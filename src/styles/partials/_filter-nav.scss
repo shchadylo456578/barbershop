@@ -1,0 +1,20 @@
+.filter-nav {
+  margin-top: 12rem;
+  margin-bottom: 50px;
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+
+    button {
+      margin: 0 15px;
+    }
+    
+    .active {
+      color: #715a33;
+      border-color: #715a33
+    }
+  }
+}
